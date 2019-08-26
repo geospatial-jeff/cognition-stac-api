@@ -60,14 +60,18 @@ class ArangoLoader(object):
     def __init__(self):
         self.config = ConfigLoader
 
+    def ingest_collection(self, url):
+        AssetLoader(Collection.open(url), self.config.API_ENDPOINT).ingest()
+
     def ingest_collections(self, url):
-        # TODO: recursive vs non-recursive ingest
         root = Collection.open(url)
         for coll in root.collections():
             AssetLoader(coll, self.config.API_ENDPOINT).ingest()
 
+    def ingest_item(self, url):
+        AssetLoader(Item.open(url), self.config.API_ENDPOINT).ingest()
+
     def ingest_items(self, url):
-        # TODO: recursive vs non-recursive ingest
         root = Collection.open(url)
         for item in root.items():
             AssetLoader(item, self.config.API_ENDPOINT).ingest()
