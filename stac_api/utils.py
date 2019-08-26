@@ -40,6 +40,7 @@ class LinkEncoder(object):
         self.links = [{'rel': x, 'href': getattr(self, x)} for x in links if getattr(self, x)]
 
 
+
 class AssetLoader(object):
 
     def __init__(self, asset, endpoint):
