@@ -1,9 +1,5 @@
 from urllib.parse import urljoin
 
-import os
-
-os.environ['API_ENDPOINT'] = 'https://cognition-stac-api.com'
-
 from stac_api import ConfigLoader
 
 from satstac import Collection, Item
