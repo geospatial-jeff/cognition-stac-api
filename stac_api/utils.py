@@ -33,6 +33,7 @@ class LinkEncoder(object):
 
     def _encode_collection(self):
         # ASSUMPTION: Only items will have collections
+        # ASSUMPTION: Item's parent and collection are the same
         self.collection = self.parent if self.type == 'item' else None
 
     def _encode_links(self):
